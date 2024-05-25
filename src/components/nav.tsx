@@ -13,14 +13,15 @@ export default async function Nav() {
             Home
           </Button>
         </Link>
-        <Link href={"../feed"}>
-          <Button className="mr-40" variant={"outline"}>
-            Feed
-          </Button>
-        </Link>
-        <Link href={"../chats"}>
-          <Button className="mr-40" variant={"outline"}>
-            Chats
+        <Button className="mr-40" variant={"outline"}>
+          Post
+        </Button>
+        <Button className="mr-40" variant={"outline"}>
+          Admin
+        </Button>
+        <Link href={"../login"}>
+          <Button className="mr-40 bg-[#315196] hover:bg-[#2d4069]">
+            Login
           </Button>
         </Link>
       </div>
