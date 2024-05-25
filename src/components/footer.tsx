@@ -19,18 +19,21 @@ export default function Footer() {
             className="cursor-pointer"
             width={28}
             height={28}
+            color="#0278b3"
           />
           <LinkedInLogoIcon
             onClick={() => window.open("https://www.linkedin.com/in/joshik27/")}
             className="cursor-pointer"
             width={28}
             height={28}
+            color="#0278b3"
           />
           <TwitterLogoIcon
             onClick={() => window.open("https://twitter.com/aspirant_4021")}
             className="cursor-pointer"
             width={28}
             height={28}
+            color="#0278b3"
           />
         </div>
       </div>

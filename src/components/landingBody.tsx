@@ -40,8 +40,8 @@ export default function LandingBody() {
         <div className="font-inter font-sans font-[700] text-[48px] text-center leading-[48px] mb-8 mt-12">
           Features
         </div>
-        <div className="flex justify-evenly">
-          <div className="bg-[#F2FAFE] w-80 p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col items-center sm:flex-row sm:justify-evenly">
+          <div className="bg-[#F2FAFE] w-80 p-8 rounded-lg shadow-lg mb-4 sm:mb-0">
             <div className="text-[#060463] text-[18px] font-[600] leading-[22px]">
               Post About
             </div>
@@ -49,7 +49,7 @@ export default function LandingBody() {
               Random Text Random Text Random Text Random Text Random Text
             </div>
           </div>
-          <div className="bg-[#F2FAFE] w-80 p-8 rounded-lg shadow-lg">
+          <div className="bg-[#F2FAFE] w-80 p-8 rounded-lg shadow-lg mb-4 sm:mb-0">
             <div className="text-[#060463] text-[18px] font-[600] leading-[22px]">
               Post About
             </div>
