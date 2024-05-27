@@ -72,9 +72,9 @@ export default function LandingBody() {
           Frequently Asked Questions
         </div>
         <Separator className="mb-8" />
-        <Accordion type="single" collapsible className="px-60">
+        <Accordion type="single" collapsible className="p-0 lg:px-60">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] px-8 border-[0.5px] border-[#D5D8DC]">
+            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] lg:px-8 border-[0.5px] border-[#D5D8DC]">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="text-[#1e1e21] text-[16px] font-[400] border-[0.5px] border-[#D5D8DC] py-4 pl-4">
@@ -82,7 +82,7 @@ export default function LandingBody() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] px-8 border-[0.5px] border-[#D5D8DC]">
+            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] lg:px-8 border-[0.5px] border-[#D5D8DC]">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="text-[#1e1e21] text-[16px] font-[400] border-[0.5px] border-[#D5D8DC] py-4 pl-4">
@@ -90,7 +90,7 @@ export default function LandingBody() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] px-8 border-[0.5px] border-[#D5D8DC]">
+            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] lg:px-8 border-[0.5px] border-[#D5D8DC]">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="text-[#1e1e21] text-[16px] font-[400] border-[0.5px] border-[#D5D8DC] py-4 pl-4">
@@ -98,7 +98,7 @@ export default function LandingBody() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] px-8 border-[0.5px] border-[#D5D8DC]">
+            <AccordionTrigger className="bg-white text-[#4b55639c] text-[16px] font-[600] lg:px-8 border-[0.5px] border-[#D5D8DC]">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="text-[#1e1e21] text-[16px] font-[400] border-[0.5px] border-[#D5D8DC] py-4 pl-4">
