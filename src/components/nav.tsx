@@ -2,6 +2,14 @@ import { Button } from "./ui/button";
 import { HomeIcon, ChatBubbleIcon, Pencil1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default async function Nav() {
   return (
@@ -16,9 +24,28 @@ export default async function Nav() {
         <Button className="mr-40" variant={"outline"}>
           Post
         </Button>
-        <Button className="mr-40" variant={"outline"}>
-          Admin
-        </Button>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger className="mr-40 cursor-pointer">
+            <Button variant={"outline"}>Admin</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="cursor-pointer">
+            <DropdownMenuLabel>Forms</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <Link href={"../university"}>
+              <DropdownMenuItem className="cursor-pointer">
+                University
+              </DropdownMenuItem>
+            </Link>
+            <DropdownMenuItem className="cursor-pointer">
+              Course
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              Professor
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
         <Link href={"../login"}>
           <Button className="mr-40 bg-[#315196] hover:bg-[#2d4069]">
             Login

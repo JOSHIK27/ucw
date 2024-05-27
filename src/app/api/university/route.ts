@@ -2,11 +2,12 @@ import { supabase } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { University, Country } = await req.json();
+  const { university, country } = await req.json();
+  console.log(university, country);
   try {
     const { error } = await supabase
       .from("university")
-      .insert({ name: University, country: Country });
+      .insert({ name: university, country: country });
 
     if (error) {
       throw new Error(error.message);

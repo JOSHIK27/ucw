@@ -1,5 +1,5 @@
 import LoginCard from "@/components/login";
-export default function Login() {
+export default function Page() {
   return (
     <>
       <LoginCard />
