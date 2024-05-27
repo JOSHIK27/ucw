@@ -1,6 +1,8 @@
+import { auth } from "../auth";
 import { Button } from "./ui/button";
 import { HomeIcon, ChatBubbleIcon, Pencil1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import Logout from "./logoutBtn";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
@@ -12,6 +14,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default async function Nav() {
+  const session = await auth();
+
   return (
     <div className="bg-white fixed z-50 top-0 w-full shadow-md h-12 flex lg:justify-evenly items-center">
       <SheetSide />
@@ -26,9 +30,10 @@ export default async function Nav() {
         </Button>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="mr-40 cursor-pointer">
-            <Button variant={"outline"}>Admin</Button>
+          <DropdownMenuTrigger className="mr-40 cursor-pointer border-[1px] rounded-md px-4 py-2 text-[14px] font-[500]">
+            Admin
           </DropdownMenuTrigger>
+
           <DropdownMenuContent className="cursor-pointer">
             <DropdownMenuLabel>Forms</DropdownMenuLabel>
             <DropdownMenuSeparator />
@@ -40,17 +45,22 @@ export default async function Nav() {
             <DropdownMenuItem className="cursor-pointer">
               Course
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Professor
-            </DropdownMenuItem>
+            <Link href={"../prof"}>
+              <DropdownMenuItem className="cursor-pointer">
+                Professor
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
-
-        <Link href={"../login"}>
-          <Button className="mr-40 bg-[#315196] hover:bg-[#2d4069]">
-            Login
-          </Button>
-        </Link>
+        {session?.user ? (
+          <Logout />
+        ) : (
+          <Link href={"../login"}>
+            <Button className="mr-40 bg-[#315196] hover:bg-[#2d4069]">
+              Login
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );

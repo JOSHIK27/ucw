@@ -5,7 +5,8 @@ export async function POST(req: Request) {
   const request = await req.json();
 
   try {
-    const { name, university } = request;
+    const { prof, university } = request;
+    console.log(prof, university);
 
     const { data, error } = await supabase
       .from("university")
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
 
     if (!error) {
       const { error } = await supabase.from("professor").insert({
-        name: name,
+        name: prof,
         university_id: data[0].id,
       });
 

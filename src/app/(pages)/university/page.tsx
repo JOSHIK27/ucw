@@ -1,4 +1,4 @@
-import UniversityAdminForm from "@/components/adminForm";
+import UniversityAdminForm from "@/components/UniversityAdminForm";
 export default function Page() {
   return <UniversityAdminForm />;
 }

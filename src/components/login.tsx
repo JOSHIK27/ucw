@@ -11,7 +11,7 @@ export default function LoginCard() {
       <form
         action={async (formData) => {
           "use server";
-          await signIn("resend", formData);
+          await signIn("resend", formData, { redirectTo: "/" });
         }}
         className="space-y-[8px] "
       >
