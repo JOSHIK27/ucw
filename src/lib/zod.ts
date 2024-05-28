@@ -18,3 +18,7 @@ export const universityFormSchema = object({
 export const profSchema = object({
   prof: string().min(5).max(25),
 });
+
+export const courseSchema = object({
+  name: string().min(5).max(25),
+});

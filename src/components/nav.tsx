@@ -42,9 +42,12 @@ export default async function Nav() {
                 University
               </DropdownMenuItem>
             </Link>
-            <DropdownMenuItem className="cursor-pointer">
-              Course
-            </DropdownMenuItem>
+            <Link href={"../course"}>
+              {" "}
+              <DropdownMenuItem className="cursor-pointer">
+                Course
+              </DropdownMenuItem>
+            </Link>
             <Link href={"../prof"}>
               <DropdownMenuItem className="cursor-pointer">
                 Professor
