@@ -12,7 +12,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 export default async function Nav() {
   const session = await auth();
 
@@ -21,14 +20,15 @@ export default async function Nav() {
       <SheetSide />
       <div className="hidden lg:flex">
         <Link href={"../"}>
-          <Button className="mr-40" variant={"outline"}>
+          <Button className={`mr-40`} variant={"outline"}>
             Home
           </Button>
         </Link>
-        <Button className="mr-40" variant={"outline"}>
-          Post
-        </Button>
-
+        <Link href={"../review"}>
+          <Button className="mr-40" variant={"outline"}>
+            Review
+          </Button>
+        </Link>
         <DropdownMenu>
           <DropdownMenuTrigger className="mr-40 cursor-pointer border-[1px] rounded-md px-4 py-2 text-[14px] font-[500]">
             Admin
@@ -43,7 +43,6 @@ export default async function Nav() {
               </DropdownMenuItem>
             </Link>
             <Link href={"../course"}>
-              {" "}
               <DropdownMenuItem className="cursor-pointer">
                 Course
               </DropdownMenuItem>

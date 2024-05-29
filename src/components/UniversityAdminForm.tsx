@@ -6,6 +6,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
+
 export default function UniversityAdminForm() {
   const { toast } = useToast();
   const {

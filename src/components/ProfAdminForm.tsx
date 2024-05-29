@@ -8,13 +8,13 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
 
-type propsType = {
+type propItem = {
   id: Number;
   name: string;
   country: string;
 };
 
-export default function ProfAdminForm({ data }: { data: propsType[] }) {
+export default function ProfAdminForm({ data }: { data: propItem[] }) {
   const { toast } = useToast();
   const {
     register,
