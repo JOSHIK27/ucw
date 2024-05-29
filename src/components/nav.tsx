@@ -16,7 +16,7 @@ export default async function Nav() {
   const session = await auth();
 
   return (
-    <div className="bg-white fixed z-50 top-0 w-full shadow-md h-12 flex lg:justify-evenly items-center">
+    <div className="fixed top-0 z-50 flex h-12 w-full items-center bg-white shadow-md lg:justify-evenly">
       <SheetSide />
       <div className="hidden lg:flex">
         <Link href={"../"}>
@@ -30,7 +30,7 @@ export default async function Nav() {
           </Button>
         </Link>
         <DropdownMenu>
-          <DropdownMenuTrigger className="mr-40 cursor-pointer border-[1px] rounded-md px-4 py-2 text-[14px] font-[500]">
+          <DropdownMenuTrigger className="mr-40 cursor-pointer rounded-md border-[1px] px-4 py-2 text-[14px] font-[500]">
             Admin
           </DropdownMenuTrigger>
 
@@ -70,7 +70,7 @@ export default async function Nav() {
 
 export function SheetSide() {
   return (
-    <div className="lg:hidden grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 gap-2 lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline">Menu</Button>
@@ -78,7 +78,7 @@ export function SheetSide() {
         <SheetContent side={"left"} className="">
           <div className="flex flex-col">
             <Link href={"../"}>
-              <Button className="w-full my-4">
+              <Button className="my-4 w-full">
                 Home
                 <HomeIcon className="ml-4" />
               </Button>

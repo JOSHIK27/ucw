@@ -4,9 +4,9 @@ import { signIn } from "../auth";
 
 export default function LoginCard() {
   return (
-    <div className="mt-12 w-[500px] mx-auto p-12 rounded-lg shadow-xl text-center">
-      <div className="flex justify-center items-center mb-4">
-        <div className="font-[600] text-[28px] text-[#315196]">Login</div>
+    <div className="mx-auto mt-12 w-[500px] rounded-lg p-12 text-center shadow-xl">
+      <div className="mb-4 flex items-center justify-center">
+        <div className="text-[28px] font-[600] text-[#315196]">Login</div>
       </div>
       <form
         action={async (formData) => {

@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const { university, country } = await req.json();
-  console.log(university, country);
   try {
     const { error } = await supabase
       .from("university")

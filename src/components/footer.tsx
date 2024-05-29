@@ -6,12 +6,12 @@ import {
 } from "@radix-ui/react-icons";
 export default function Footer() {
   return (
-    <div className="bg-white h-40 flex justify-center pt-12">
+    <div className="flex h-40 justify-center bg-white pt-12 ">
       <div>
-        <div className="w-80 text-center mb-4 text-[16px] text-[#777b80] font-[600]">
+        <div className="mb-4 w-80 text-center text-[16px] font-[600] text-[#777b80]">
           Contact Us
         </div>
-        <div className="flex justify-evenly w-80">
+        <div className="flex w-80 justify-evenly">
           <GitHubLogoIcon
             onClick={() =>
               window.open("https://github.com/JOSHIK27/ref-helper")

@@ -5,7 +5,6 @@ export async function POST(req: Request) {
   const request = await req.json();
   try {
     const { prof, university } = request;
-    console.log(prof, university);
 
     const { data, error } = await supabase
       .from("university")

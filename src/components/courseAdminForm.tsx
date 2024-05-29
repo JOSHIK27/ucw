@@ -55,7 +55,7 @@ export default function CourseAdminForm({
     });
 
     const updatedTaughtBy = prof.filter(
-      (item) => uni_ids.includes(item.university_id) == true
+      (item) => uni_ids.includes(item.university_id) == true,
     );
     setValue("prof", null);
     setTaughtBy(updatedTaughtBy);
@@ -91,9 +91,9 @@ export default function CourseAdminForm({
   };
 
   return (
-    <div className="flex justify-center mt-20 ">
-      <div className="font-semibold shadow-lg rounded-lg p-8">
-        <div className="text-[#315196] text-[20px]">Course Form</div>
+    <div className="mt-20 flex justify-center ">
+      <div className="rounded-lg p-8 font-semibold shadow-lg">
+        <div className="text-[20px] text-[#315196]">Course Form</div>
         <Separator className="my-[8px]" />
         <form onSubmit={handleSubmit(onsubmit)}>
           <label>Name</label>
@@ -103,7 +103,7 @@ export default function CourseAdminForm({
             className="w-[400px]"
           />
           {errors?.name && (
-            <p className="text-red-700 text-sm">
+            <p className="text-sm text-red-700">
               {errors.name.message?.toString()}
             </p>
           )}
@@ -142,7 +142,7 @@ export default function CourseAdminForm({
           <Button
             disabled={isSubmitting}
             type="submit"
-            className="w-[400px] bg-[#315196] hover:bg-[#2d4069] mt-4"
+            className="mt-4 w-[400px] bg-[#315196] hover:bg-[#2d4069]"
           >
             Submit
           </Button>

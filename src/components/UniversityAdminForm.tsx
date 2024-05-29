@@ -37,9 +37,9 @@ export default function UniversityAdminForm() {
   };
 
   return (
-    <div className="flex justify-center mt-20 ">
-      <div className="font-semibold shadow-lg rounded-lg p-8">
-        <div className="text-[#315196] text-[20px]">University Form</div>
+    <div className="mt-20 flex justify-center ">
+      <div className="rounded-lg p-8 font-semibold shadow-lg">
+        <div className="text-[20px] text-[#315196]">University Form</div>
         <Separator className="my-[8px]" />
         <form onSubmit={handleSubmit(onsubmit)} className="">
           <label>Name</label>
@@ -49,7 +49,7 @@ export default function UniversityAdminForm() {
             className="w-[400px]"
           />
           {errors?.university && (
-            <p className="text-red-700 text-sm">
+            <p className="text-sm text-red-700">
               {errors.university.message?.toString()}
             </p>
           )}
@@ -60,14 +60,14 @@ export default function UniversityAdminForm() {
             className="w-[400px]"
           />
           {errors?.country && (
-            <p className="text-red-700 text-sm">
+            <p className="text-sm text-red-700">
               {errors.country?.message?.toString()}
             </p>
           )}
           <Button
             disabled={isSubmitting}
             type="submit"
-            className="w-[400px] bg-[#315196] hover:bg-[#2d4069] mt-4"
+            className="mt-4 w-[400px] bg-[#315196] hover:bg-[#2d4069]"
           >
             Login
           </Button>

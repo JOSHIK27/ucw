@@ -48,9 +48,9 @@ export default function ProfAdminForm({ data }: { data: propItem[] }) {
   };
 
   return (
-    <div className="flex justify-center mt-20 ">
-      <div className="font-semibold shadow-lg rounded-lg p-8">
-        <div className="text-[#315196] text-[20px]">Prof Form</div>
+    <div className="mt-20 flex justify-center ">
+      <div className="rounded-lg p-8 font-semibold shadow-lg">
+        <div className="text-[20px] text-[#315196]">Prof Form</div>
         <Separator className="my-[8px]" />
         <form onSubmit={handleSubmit(onsubmit)}>
           <label>Name</label>
@@ -60,7 +60,7 @@ export default function ProfAdminForm({ data }: { data: propItem[] }) {
             className="w-[400px]"
           />
           {errors?.prof && (
-            <p className="text-red-700 text-sm">
+            <p className="text-sm text-red-700">
               {errors.prof.message?.toString()}
             </p>
           )}
@@ -81,14 +81,14 @@ export default function ProfAdminForm({ data }: { data: propItem[] }) {
             )}
           />
           {errors?.university && (
-            <p className="text-red-700 text-sm">
+            <p className="text-sm text-red-700">
               {errors.university?.message?.toString()}
             </p>
           )}
           <Button
             disabled={isSubmitting}
             type="submit"
-            className="w-[400px] bg-[#315196] hover:bg-[#2d4069] mt-4"
+            className="mt-4 w-[400px] bg-[#315196] hover:bg-[#2d4069]"
           >
             Submit
           </Button>
