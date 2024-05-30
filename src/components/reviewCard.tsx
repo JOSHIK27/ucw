@@ -15,13 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  Star,
-  ThinStar,
-  RoundedStar,
-  ThinRoundedStar,
-  StickerStar,
-} from "@smastrom/react-rating";
+import { Star, ThinStar } from "@smastrom/react-rating";
 import {
   Carousel,
   CarouselContent,

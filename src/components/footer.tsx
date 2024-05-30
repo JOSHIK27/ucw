@@ -6,7 +6,7 @@ import {
 } from "@radix-ui/react-icons";
 export default function Footer() {
   return (
-    <div className="flex h-40 justify-center bg-white pt-12 ">
+    <footer className="flex h-40 justify-center bg-white pt-12 ">
       <div>
         <div className="mb-4 w-80 text-center text-[16px] font-[600] text-[#777b80]">
           Contact Us
@@ -37,6 +37,6 @@ export default function Footer() {
           />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

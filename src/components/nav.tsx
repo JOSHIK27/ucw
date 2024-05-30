@@ -16,7 +16,7 @@ export default async function Nav() {
   const session = await auth();
 
   return (
-    <div className="fixed top-0 z-50 flex h-12 w-full items-center bg-white shadow-md lg:justify-evenly">
+    <nav className="fixed top-0 z-50 flex h-12 w-full items-center bg-white shadow-md lg:justify-evenly">
       <SheetSide />
       <div className="hidden lg:flex">
         <Link href={"../"}>
@@ -26,7 +26,12 @@ export default async function Nav() {
         </Link>
         <Link href={"../review"}>
           <Button className="mr-40" variant={"outline"}>
-            Review
+            Reviews
+          </Button>
+        </Link>
+        <Link href={"../post"}>
+          <Button className="mr-40" variant={"outline"}>
+            Post
           </Button>
         </Link>
         <DropdownMenu>
@@ -64,13 +69,13 @@ export default async function Nav() {
           </Link>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
 
 export function SheetSide() {
   return (
-    <div className="grid grid-cols-2 gap-2 lg:hidden">
+    <nav className="grid grid-cols-2 gap-2 lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline">Menu</Button>
@@ -97,6 +102,6 @@ export function SheetSide() {
           </div>
         </SheetContent>
       </Sheet>
-    </div>
+    </nav>
   );
 }

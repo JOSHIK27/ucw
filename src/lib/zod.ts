@@ -22,3 +22,13 @@ export const profSchema = object({
 export const courseSchema = object({
   name: string().min(5).max(25),
 });
+
+export const multiFormSchema = object({
+  university: object({ value: z.string(), label: z.string() }),
+  course: object({ value: z.string(), label: z.string() }),
+  year: object({ value: z.number(), label: z.number() }),
+  experience: string().min(10).max(400),
+  overallStars: z.number().min(1).max(5),
+  courseDepthStars: z.number().min(1).max(5),
+  recommendStars: z.number().min(1).max(5),
+});
