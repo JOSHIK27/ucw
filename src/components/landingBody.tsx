@@ -1,12 +1,15 @@
+"use client";
 import Image from "next/image";
 import uniSvg from "../../public/university.svg";
-import { Button } from "./ui/button";
+import { poppins } from "@/fonts";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 
 export default function LandingBody() {
@@ -21,9 +24,13 @@ export default function LandingBody() {
             An Application that helps students to post <br /> about courses &
             course leaders <span className="font-[700]">ANONYMOUSLY</span>
           </p>
-          <Button className="w-28 rounded-full p-[2px] text-[18px] font-[700px]">
+          <motion.button
+            whileHover={{ scale: 1.15 }}
+            transition={{ duration: 0.2 }}
+            className="w-28 rounded-full bg-black p-[10px] text-[18px] font-[700px] text-white"
+          >
             Explore
-          </Button>
+          </motion.button>
         </div>
         <Image priority src={uniSvg} alt="Uni" />
       </section>
@@ -32,9 +39,14 @@ export default function LandingBody() {
         <h2 className="font-inter mb-8 mt-12 text-center font-sans text-[48px] font-[700] leading-[48px]">
           Why this app ?
         </h2>
-        <p className="text-center text-[18px] font-[400px] text-[#4B5563]">
-          aclnadncla adncadn;ad ancadd;a;c aoncpadcanpandanvdadvnn aclnadncla
-          ancadd;a;c aoncpadcanpandanvdadvnn
+        <p
+          className={`${poppins.className} px-16 text-center text-[18px] font-[400px] text-[#4B5563]`}
+        >
+          One big problem for undergrad and postgrad students is to knowing
+          about the optional courses to select while course registration. Each
+          student has their own preference's. Some need easy going, Some need
+          depth courses, Some need great professors. This website go to solution
+          to know to about courses to know what almuni has told about courses.
         </p>
       </section>
 
@@ -42,32 +54,55 @@ export default function LandingBody() {
         <h2 className="font-inter mb-8 mt-12 text-center font-sans text-[48px] font-[700] leading-[48px]">
           Features
         </h2>
-        <div className="flex flex-col items-center sm:flex-row sm:justify-evenly">
-          <div className="mb-4 w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg sm:mb-0">
-            <h3 className="text-[18px] font-[600] leading-[22px] text-[#060463]">
-              Post About
-            </h3>
-            <div className="text-[16px] font-[500px] text-[#4B5563]">
-              Random Text Random Text Random Text Random Text Random Text
+        <section className="flex flex-col items-center sm:flex-row sm:justify-evenly">
+          <motion.div
+            whileHover={{ scale: [null, 1.1, 1.1] }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="mb-4 w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg sm:mb-0">
+              <h3 className="text-[18px] font-[600] leading-[22px] text-[#060463]">
+                Drop Reviews
+              </h3>
+              <p
+                className={`${poppins.className} mt-2 text-[16px] text-[#4B5563]`}
+              >
+                You can select your university, course and drop a review.
+              </p>
             </div>
-          </div>
-          <h3 className="mb-4 w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg sm:mb-0">
-            <div className="text-[18px] font-[600] leading-[22px] text-[#060463]">
-              Post About
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: [null, 1.1, 1.1] }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="mb-4 w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg sm:mb-0">
+              <h3 className="text-[18px] font-[600] leading-[22px] text-[#060463]">
+                Explore about courses
+              </h3>
+              <p
+                className={`${poppins.className} mt-2 text-[16px] font-[300] text-[#4B5563]`}
+              >
+                You can filter out the reviews based on your choice
+              </p>
             </div>
-            <div className="text-[16px] font-[500px] text-[#4B5563]">
-              Random Text Random Text Random Text Random Text Random Text
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: [null, 1.1, 1.1] }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg">
+              <h3 className="text-[18px] font-[600] leading-[22px] text-[#060463]">
+                Privacy
+              </h3>
+              <p
+                className={`${poppins.className} mt-2 text-[16px] text-[#4B5563]`}
+              >
+                Your identity will be kept private
+              </p>
             </div>
-          </h3>
-          <h3 className="w-80 rounded-lg bg-[#F2FAFE] p-8 shadow-lg">
-            <div className="text-[18px] font-[600] leading-[22px] text-[#060463]">
-              Post About
-            </div>
-            <div className="text-[16px] font-[500px] text-[#4B5563]">
-              Random Text Random Text Random Text Random Text Random Text
-            </div>
-          </h3>
-        </div>
+          </motion.div>
+        </section>
       </section>
 
       <section className="mt-32 bg-[#F2FAFE] p-40">

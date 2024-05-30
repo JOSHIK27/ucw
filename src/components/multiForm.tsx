@@ -6,7 +6,7 @@ import { Rating } from "@smastrom/react-rating";
 import { z } from "zod";
 import { multiFormSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
 import "@smastrom/react-rating/style.css";
 import { ThinStar } from "@smastrom/react-rating";
@@ -63,7 +63,7 @@ export default function MultiForm({
     reset,
     trigger,
     control,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     getValues,
   } = useForm({
     resolver: zodResolver(multiFormSchema),
@@ -106,7 +106,6 @@ export default function MultiForm({
   const next = async () => {
     const fields = steps[currentStep].fields;
     const output = await trigger(fields as FieldName[], { shouldFocus: true });
-    console.log(getValues());
 
     if (!output) return;
 
@@ -397,7 +396,7 @@ export default function MultiForm({
               <button
                 type="button"
                 onClick={next}
-                disabled={currentStep === steps.length - 1}
+                disabled={isSubmitting}
                 className="rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <svg

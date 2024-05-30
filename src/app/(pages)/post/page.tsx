@@ -14,7 +14,7 @@ export default async function Page() {
   const { data }: PostgrestSingleResponse<coursePropItem[]> = await supabase
     .from("course")
     .select();
-  console.log(data);
+
   return (
     <MultiForm
       universityList={universityList ? universityList : []}

@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
 import { useEffect, useState } from "react";
-
+import { Card } from "./ui/card";
 type propsItem1 = {
   id: Number;
   name: string;
@@ -92,7 +92,7 @@ export default function CourseAdminForm({
 
   return (
     <div className="mt-20 flex justify-center ">
-      <div className="rounded-lg p-8 font-semibold shadow-lg">
+      <Card className="rounded-lg p-8 font-semibold shadow-lg">
         <div className="text-[20px] text-[#315196]">Course Form</div>
         <Separator className="my-[8px]" />
         <form onSubmit={handleSubmit(onsubmit)}>
@@ -147,7 +147,7 @@ export default function CourseAdminForm({
             Submit
           </Button>
         </form>
-      </div>
+      </Card>
     </div>
   );
 }

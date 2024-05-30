@@ -6,6 +6,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
+import { Card } from "./ui/card";
 
 export default function UniversityAdminForm() {
   const { toast } = useToast();
@@ -38,7 +39,7 @@ export default function UniversityAdminForm() {
 
   return (
     <div className="mt-20 flex justify-center ">
-      <div className="rounded-lg p-8 font-semibold shadow-lg">
+      <Card className="rounded-lg p-8 font-semibold shadow-lg">
         <div className="text-[20px] text-[#315196]">University Form</div>
         <Separator className="my-[8px]" />
         <form onSubmit={handleSubmit(onsubmit)} className="">
@@ -72,7 +73,7 @@ export default function UniversityAdminForm() {
             Login
           </Button>
         </form>
-      </div>
+      </Card>
     </div>
   );
 }
