@@ -44,52 +44,50 @@ export default function ProfAdminForm({ data }: { data: universityProp[] }) {
   };
 
   return (
-    <div className="mt-20 flex justify-center ">
-      <Card className="rounded-lg p-8 font-semibold shadow-lg">
-        <div className="text-[20px] text-[#315196]">Prof Form</div>
-        <Separator className="my-[8px]" />
-        <form onSubmit={handleSubmit(onsubmit)}>
-          <label>Name</label>
-          <Input
-            {...register("prof")}
-            placeholder="Enter Name"
-            className="w-[400px]"
-          />
-          {errors?.prof && (
-            <p className="text-sm text-red-700">
-              {errors.prof.message?.toString()}
-            </p>
-          )}
-          <label>University</label>
-          <Controller
-            name="university"
-            control={control}
-            render={({ field }) => (
-              <Select
-                {...field}
-                options={[
-                  ...data.map((item) => ({
-                    value: item.name,
-                    label: item.name,
-                  })),
-                ]}
-              />
+    <section className="w-full">
+      <div className="absolute h-[250px] w-full bg-[#4f6fb9]">
+        <Card className="relative mx-auto mt-40 w-[500px] rounded-lg px-8 py-8 shadow-xl">
+          <div className="text-[25px] font-bold text-[#37508a]">Prof Form</div>
+          <Separator className="my-[8px]" />
+          <form onSubmit={handleSubmit(onsubmit)}>
+            <label>Name</label>
+            <Input {...register("prof")} placeholder="Enter Name" />
+            {errors?.prof && (
+              <p className="text-sm text-red-700">
+                {errors.prof.message?.toString()}
+              </p>
             )}
-          />
-          {errors?.university && (
-            <p className="text-sm text-red-700">
-              {errors.university?.message?.toString()}
-            </p>
-          )}
-          <Button
-            disabled={isSubmitting}
-            type="submit"
-            className="mt-4 w-[400px] bg-[#315196] hover:bg-[#2d4069]"
-          >
-            Submit
-          </Button>
-        </form>
-      </Card>
-    </div>
+            <label>University</label>
+            <Controller
+              name="university"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  options={[
+                    ...data.map((item) => ({
+                      value: item.name,
+                      label: item.name,
+                    })),
+                  ]}
+                />
+              )}
+            />
+            {errors?.university && (
+              <p className="text-sm text-red-700">
+                {errors.university?.message?.toString()}
+              </p>
+            )}
+            <Button
+              disabled={isSubmitting}
+              type="submit"
+              className="mt-4 w-full bg-[#315196] hover:bg-[#2d4069]"
+            >
+              Submit
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </section>
   );
 }

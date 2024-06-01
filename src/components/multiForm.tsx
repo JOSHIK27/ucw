@@ -164,7 +164,7 @@ export default function MultiForm({
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                <div className="text-[20px] text-[#315196]">
+                <div className="text-[20px] font-bold text-[#37508a]">
                   Enter course details
                 </div>
                 <Separator className="my-[8px]" />
@@ -222,7 +222,7 @@ export default function MultiForm({
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                <div className="text-[20px] text-[#315196]">
+                <div className="text-[20px] font-bold text-[#37508a]">
                   Share your experience
                 </div>
                 <Separator className="my-[8px]" />
@@ -269,7 +269,7 @@ export default function MultiForm({
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 <div className="p-4">
-                  <div className="text-[20px] text-[#315196]">
+                  <div className="text-[20px] font-bold text-[#37508a]">
                     Rate the following
                   </div>
                   <Separator className="my-[8px]" />

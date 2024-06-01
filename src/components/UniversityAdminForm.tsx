@@ -38,42 +38,38 @@ export default function UniversityAdminForm() {
   };
 
   return (
-    <div className="mt-20 flex justify-center ">
-      <Card className="rounded-lg p-8 font-semibold shadow-lg">
-        <div className="text-[20px] text-[#315196]">University Form</div>
-        <Separator className="my-[8px]" />
-        <form onSubmit={handleSubmit(onsubmit)} className="">
-          <label>Name</label>
-          <Input
-            {...register("university")}
-            placeholder="Enter Name"
-            className="w-[400px]"
-          />
-          {errors?.university && (
-            <p className="text-sm text-red-700">
-              {errors.university.message?.toString()}
-            </p>
-          )}
-          <label>Country</label>
-          <Input
-            {...register("country")}
-            placeholder="Enter Country"
-            className="w-[400px]"
-          />
-          {errors?.country && (
-            <p className="text-sm text-red-700">
-              {errors.country?.message?.toString()}
-            </p>
-          )}
-          <Button
-            disabled={isSubmitting}
-            type="submit"
-            className="mt-4 w-[400px] bg-[#315196] hover:bg-[#2d4069]"
-          >
-            Login
-          </Button>
-        </form>
-      </Card>
-    </div>
+    <section className="w-full">
+      <div className="absolute h-[250px] w-full bg-[#4f6fb9]">
+        <Card className="relative mx-auto mt-40 w-[500px] rounded-lg px-8 py-8 shadow-xl">
+          <div className="text-[25px] font-bold text-[#37508a]">
+            University Form
+          </div>
+          <Separator className="my-[8px]" />
+          <form onSubmit={handleSubmit(onsubmit)} className="">
+            <label>Name</label>
+            <Input {...register("university")} placeholder="Enter Name" />
+            {errors?.university && (
+              <p className="text-sm text-red-700">
+                {errors.university.message?.toString()}
+              </p>
+            )}
+            <label>Country</label>
+            <Input {...register("country")} placeholder="Enter Country" />
+            {errors?.country && (
+              <p className="text-sm text-red-700">
+                {errors.country?.message?.toString()}
+              </p>
+            )}
+            <Button
+              disabled={isSubmitting}
+              type="submit"
+              className="mt-4 w-full bg-[#315196] hover:bg-[#2d4069]"
+            >
+              Login
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </section>
   );
 }
