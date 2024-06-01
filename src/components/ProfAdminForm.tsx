@@ -8,14 +8,9 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
 import { Card } from "./ui/card";
+import { universityProp } from "@/lib/types";
 
-type propItem = {
-  id: Number;
-  name: string;
-  country: string;
-};
-
-export default function ProfAdminForm({ data }: { data: propItem[] }) {
+export default function ProfAdminForm({ data }: { data: universityProp[] }) {
   const { toast } = useToast();
   const {
     register,

@@ -9,24 +9,14 @@ import { Separator } from "./ui/separator";
 import { useToast } from "./ui/use-toast";
 import { useEffect, useState } from "react";
 import { Card } from "./ui/card";
-type propsItem1 = {
-  id: Number;
-  name: string;
-  country: string;
-};
-
-type propsItem2 = {
-  id: Number;
-  name: string;
-  university_id: Number;
-};
+import { universityProp, profProp } from "@/lib/types";
 
 export default function CourseAdminForm({
   university,
   prof,
 }: {
-  university: propsItem1[];
-  prof: propsItem2[];
+  university: universityProp[];
+  prof: profProp[];
 }) {
   const { toast } = useToast();
   const {
@@ -44,7 +34,7 @@ export default function CourseAdminForm({
 
   const watchUniversity = watch("university");
 
-  const [taughtBy, setTaughtBy] = useState<propsItem2[]>([]);
+  const [taughtBy, setTaughtBy] = useState<profProp[]>([]);
 
   useEffect(() => {
     const uni_ids: Number[] = [];

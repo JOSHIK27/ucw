@@ -13,9 +13,7 @@ export default function Footer() {
         </div>
         <div className="flex w-80 justify-evenly">
           <GitHubLogoIcon
-            onClick={() =>
-              window.open("https://github.com/JOSHIK27/ref-helper")
-            }
+            onClick={() => window.open("https://github.com/JOSHIK27/ucw")}
             className="cursor-pointer"
             width={28}
             height={28}

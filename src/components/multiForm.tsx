@@ -16,6 +16,7 @@ import { useEffect } from "react";
 type Inputs = z.infer<typeof multiFormSchema>;
 import { Controller } from "react-hook-form";
 import { useToast } from "./ui/use-toast";
+import { courseProp } from "@/lib/types";
 
 const steps = [
   {
@@ -36,24 +37,17 @@ const steps = [
   { id: "Step 4", name: "Complete" },
 ];
 
-type coursePropItem = {
-  id: Number;
-  name: string;
-  prof_id: Number;
-  university: string;
-};
-
 export default function MultiForm({
   universityList,
   courseList,
 }: {
   universityList: string[];
-  courseList: coursePropItem[];
+  courseList: courseProp[];
 }) {
   const { toast } = useToast();
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
-  const [courses, setCourses] = useState<coursePropItem[] | any>([]);
+  const [courses, setCourses] = useState<courseProp[] | any>([]);
   const delta = currentStep - previousStep;
 
   const {
@@ -206,7 +200,7 @@ export default function MultiForm({
                     <Select
                       {...field}
                       options={[
-                        ...courses.map((item: coursePropItem) => ({
+                        ...courses.map((item: courseProp) => ({
                           value: item.name,
                           label: item.name,
                         })),
