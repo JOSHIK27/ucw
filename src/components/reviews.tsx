@@ -38,12 +38,33 @@ export default function ReviewsUI({
 
   const onsubmit = async () => {
     try {
-      const response = await fetch("api/reviews", {
+      const response = await fetch("api/review", {
         method: "GET",
       });
-      if (!response.ok) throw new Error("Some server error");
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error);
+      }
+
+      const { reviewList, courseList } = await response.json();
+
+      let courseId: Number;
+      courseList.forEach((course: courseProp) => {
+        if (
+          course.university == getValues().university["value"] &&
+          course.name == getValues().course["value"]
+        ) {
+          courseId = course.id;
+        }
+      });
+
+      const reviews = reviewList.filter(
+        (review: any) => review.course_id == courseId,
+      );
+      console.log(reviews);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -91,7 +112,11 @@ export default function ReviewsUI({
               )}
             />
             <br />
-            <Button className="w-full bg-[#4f6fb9] text-white">
+            <Button
+              disabled={isSubmitting}
+              type="submit"
+              className="w-full bg-[#4f6fb9] text-white"
+            >
               Fetch Reviews
             </Button>
           </form>
