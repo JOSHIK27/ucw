@@ -15,7 +15,7 @@ import { Separator } from "@/components/ui/separator";
 export default function LandingBody() {
   return (
     <main>
-      <section className="flex flex-wrap items-center justify-around bg-[#F2FAFE] pt-20">
+      <section className="flex flex-wrap items-center justify-around bg-[#F2FAFE] px-4 pt-20">
         <div>
           <h1 className="font-inter font-500 mb-8 font-sans text-[40px] leading-[48px]">
             UniCourseWhisper
@@ -105,22 +105,22 @@ export default function LandingBody() {
         </section>
       </section>
 
-      <section className="mt-32 bg-[#F2FAFE] p-40">
+      <section className="mt-32 bg-[#F2FAFE] p-8 md:p-40">
         <h2 className="mb-8 text-center text-[32px] font-[600] text-[#777b80]">
           Frequently Asked Questions
         </h2>
         <Separator className="mb-8" />
-        <Accordion type="single" collapsible className="p-0 lg:px-60">
+        <Accordion type="single" collapsible className="p-4 lg:px-60">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white text-[16px] font-[600] text-[#4b55639c] lg:px-8">
+            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white p-4 text-[16px] font-[600] text-[#4b55639c] lg:px-8">
               Is it accessible?
             </AccordionTrigger>
-            <AccordionContent className="border-[0.5px] border-[#D5D8DC] py-4 pl-4 text-[16px] font-[400] text-[#1e1e21]">
+            <AccordionContent className="border-[0.5px] border-[#D5D8DC] bg-white p-4 text-[16px] font-[600] text-[#4b55639c] lg:px-8">
               Yes. It adheres to the WAI-ARIA design pattern.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white text-[16px] font-[600] text-[#4b55639c] lg:px-8">
+            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white p-4 text-[16px] font-[600] text-[#4b55639c] lg:px-8">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="border-[0.5px] border-[#D5D8DC] py-4 pl-4 text-[16px] font-[400] text-[#1e1e21]">
@@ -128,7 +128,7 @@ export default function LandingBody() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white text-[16px] font-[600] text-[#4b55639c] lg:px-8">
+            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white p-4 text-[16px] font-[600] text-[#4b55639c] lg:px-8">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="border-[0.5px] border-[#D5D8DC] py-4 pl-4 text-[16px] font-[400] text-[#1e1e21]">
@@ -136,7 +136,7 @@ export default function LandingBody() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white text-[16px] font-[600] text-[#4b55639c] lg:px-8">
+            <AccordionTrigger className="border-[0.5px] border-[#D5D8DC] bg-white p-4 text-[16px] font-[600] text-[#4b55639c] lg:px-8">
               Is it accessible?
             </AccordionTrigger>
             <AccordionContent className="border-[0.5px] border-[#D5D8DC] py-4 pl-4 text-[16px] font-[400] text-[#1e1e21]">

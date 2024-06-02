@@ -80,8 +80,11 @@ export default function ReviewCard() {
   }, [reviewData]);
 
   if (isLoading) return <h1>Loading</h1>;
+
+  if (!reviewData.length)
+    return <div className="mt-40 text-center">Data Not Found</div>;
   return (
-    <div className="min-h-screen bg-[#F2FAFE]">
+    <section className="min-h-screen bg-[#F2FAFE]">
       <br />
       <br />
       <br />
@@ -183,6 +186,6 @@ export default function ReviewCard() {
           </Carousel>
         </CardContent>
       </Card>
-    </div>
+    </section>
   );
 }
