@@ -24,10 +24,62 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { poppins } from "@/fonts";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { courseProp, reviewProp } from "@/lib/types";
+
 export default function ReviewCard() {
+  const [reviewData, setReviewData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { details } = useParams();
+
   const plugin = React.useRef(
     Autoplay({ delay: 1000, stopOnInteraction: true }),
   );
+
+  useEffect(() => {
+    setIsLoading(true);
+    async function fetchReviews() {
+      try {
+        const response = await fetch("../../api/review", {
+          method: "GET",
+        });
+
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error);
+        }
+
+        const { reviewList, courseList } = await response.json();
+
+        let courseId: Number;
+        courseList.forEach((course: courseProp) => {
+          if (course.university == details[0] && course.name == details[1]) {
+            courseId = course.id;
+          }
+        });
+
+        const reviews = reviewList.filter(
+          (review: any) => review.course_id == courseId,
+        );
+        setIsLoading(false);
+        setReviewData(reviews);
+      } catch (error) {
+        alert(error);
+      }
+    }
+    fetchReviews();
+  }, []);
+
+  const stars = React.useMemo(() => {
+    let cnt = 0;
+    reviewData.forEach(
+      (review: reviewProp) => (cnt = cnt + review.overallStars),
+    );
+    return cnt / reviewData.length;
+  }, [reviewData]);
+
+  if (isLoading) return <h1>Loading</h1>;
   return (
     <div className="min-h-screen bg-[#F2FAFE]">
       <br />
@@ -39,11 +91,11 @@ export default function ReviewCard() {
         <CardHeader>
           <CardTitle className="text-center ">Overall Rating</CardTitle>
           <CardDescription className="text-center text-[36px] ">
-            4.5
+            {stars ? stars : 0}
             <Rating
               className="mx-auto"
               style={{ maxWidth: 180 }}
-              value={4.5}
+              value={stars ? stars : 0}
               itemStyles={{
                 itemShapes: Star,
                 activeFillColor: "#f59e0b",
@@ -79,7 +131,7 @@ export default function ReviewCard() {
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
+              {reviewData.map((review: reviewProp, index) => (
                 <CarouselItem key={index}>
                   <ScrollArea className="h-[200px] max-w-[550px] rounded-md border p-4">
                     <div className="flex items-center">
@@ -95,7 +147,7 @@ export default function ReviewCard() {
                             height: "20px",
                             width: "100px",
                           }}
-                          value={4.5}
+                          value={review.overallStars}
                           itemStyles={{
                             itemShapes: ThinStar,
                             activeFillColor: "#f59e0b",
@@ -120,14 +172,7 @@ export default function ReviewCard() {
                     </Badge>
                     <br />
                     <p className={`${poppins.className}`}>
-                      Jokester began sneaking into the castle in the middle of
-                      the night and leaving jokes all over the place: under the
-                      king's pillow, in his soup, even in the royal toilet. The
-                      king was furious, but he couldn't seem to stop Jokester.
-                      And then, one day, the people of the kingdom discovered
-                      that the jokes left by Jokester were so funny that they
-                      couldn't help but laugh. And once they started laughing,
-                      they couldn't stop.
+                      {review.experience}
                     </p>
                   </ScrollArea>
                 </CarouselItem>

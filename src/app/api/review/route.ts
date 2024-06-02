@@ -38,10 +38,13 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
+  console.log("Hiiiii");
   try {
     const { data, error } = await supabase.from("review").select();
+    console.log(data);
     if (error) throw new Error(error.message);
     const resp = await supabase.from("course").select();
+    console.log(resp);
     return NextResponse.json(
       { reviewList: data, courseList: resp.data },
       { status: 201 },

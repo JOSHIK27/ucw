@@ -7,6 +7,7 @@ export default async function Page() {
     const universities = Array.from(
       new Set(data.map((course) => course.university)),
     );
+
     return <ReviewsUI universities={universities} courses={data} />;
   } catch (error) {
     return <>{error}</>;

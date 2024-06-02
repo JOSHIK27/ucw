@@ -8,6 +8,7 @@ import Select from "react-select";
 import { Controller } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { courseProp } from "@/lib/types";
+import { useRouter } from "next/navigation";
 
 export default function ReviewsUI({
   universities,
@@ -16,6 +17,7 @@ export default function ReviewsUI({
   universities: string[];
   courses: courseProp[];
 }) {
+  const router = useRouter();
   const [courseList, setCourseList] = useState<string[]>([]);
   const {
     handleSubmit,
@@ -37,35 +39,9 @@ export default function ReviewsUI({
   }, [watchUniversity]);
 
   const onsubmit = async () => {
-    try {
-      const response = await fetch("api/review", {
-        method: "GET",
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error);
-      }
-
-      const { reviewList, courseList } = await response.json();
-
-      let courseId: Number;
-      courseList.forEach((course: courseProp) => {
-        if (
-          course.university == getValues().university["value"] &&
-          course.name == getValues().course["value"]
-        ) {
-          courseId = course.id;
-        }
-      });
-
-      const reviews = reviewList.filter(
-        (review: any) => review.course_id == courseId,
-      );
-      console.log(reviews);
-    } catch (error) {
-      alert(error);
-    }
+    router.push(
+      `courseReview/${getValues().university["value"]}/${getValues().course["value"]}`,
+    );
   };
 
   return (

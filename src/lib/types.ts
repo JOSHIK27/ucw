@@ -16,3 +16,13 @@ export type profProp = {
   name: string;
   university_id: Number;
 };
+
+export type reviewProp = {
+  id: Number;
+  course_id: number;
+  experience: string;
+  overallStars: number;
+  courseDepthStars: number;
+  recommendStars: number;
+  year: number;
+};
