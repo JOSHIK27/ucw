@@ -120,7 +120,7 @@ export default function MultiForm({
   };
 
   return (
-    <section className=" flex min-h-screen flex-col justify-normal bg-[#F2FAFE] px-40 pt-32">
+    <section className=" flex min-h-screen flex-col justify-normal bg-[#F2FAFE] px-4 pt-32 md:px-40">
       <nav aria-label="Progress">
         <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
           {steps.map((step, index) => (
@@ -155,8 +155,8 @@ export default function MultiForm({
         </ol>
       </nav>
 
-      <div className="mt-12 flex justify-center">
-        <Card className="rounded-lg p-8 font-semibold shadow-lg">
+      <div className="mt-12 flex w-full md:justify-center">
+        <Card className="w-full rounded-lg p-8 font-semibold shadow-lg md:w-[500px]">
           <form onSubmit={handleSubmit(processForm)}>
             {currentStep === 0 && (
               <motion.div
@@ -175,7 +175,6 @@ export default function MultiForm({
                   render={({ field }) => (
                     <Select
                       {...field}
-                      className="w-[400px]"
                       options={[
                         ...universityList.map((item) => ({
                           value: item,
@@ -233,7 +232,6 @@ export default function MultiForm({
                   render={({ field }) => (
                     <Select
                       {...field}
-                      className="w-[400px]"
                       options={[
                         ...[2020, 2021, 2022, 2023, 2024].map((item) => ({
                           value: item,
@@ -252,7 +250,7 @@ export default function MultiForm({
                 <Textarea
                   {...register("experience")}
                   placeholder="Share..."
-                  className="w-[400px]"
+                  className="md:w-[400px]"
                 />
                 {errors?.experience && (
                   <p className="text-sm text-red-700">
