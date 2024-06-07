@@ -83,7 +83,7 @@ export default function CourseAdminForm({
   return (
     <section className="w-full">
       <div className="absolute h-[250px] w-full bg-[#4f6fb9]">
-        <Card className="relative mx-auto mt-40 rounded-lg px-8 py-8 shadow-xl md:w-[500px]">
+        <Card className="relative mx-2 mt-40 rounded-lg px-8 py-8 shadow-xl md:mx-auto md:w-[500px]">
           <div className="text-[25px] font-bold text-[#37508a]">
             Course Form
           </div>
